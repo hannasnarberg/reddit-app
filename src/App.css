@@ -2,7 +2,7 @@
   padding: 2rem 4rem;
 }
 
-.content {
+.pageContent {
   display: grid;
   grid-template-columns: 0.3fr 0.7fr;
 }
@@ -36,6 +36,7 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .logo {
@@ -46,22 +47,45 @@
   font-weight: bold;
 }
 
-.navigation {
+.pagination {
   margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
 }
 
-.navButton:hover {
+.paginationButton:hover {
   cursor: pointer;
 }
 
-.lol {
-  text-align: center;
+.deactivated {
+  color: rgb(154, 154, 154);
+}
+
+.deactivated:hover {
+  cursor: default;
+}
+
+.dropdown {
+  font-size: 15px;
+  border: 1px solid rgb(177, 177, 177);
+  padding: 2px;
+  border-radius: 3px;
 }
 
 li {
   margin-top: 7px;
   list-style-type: none;
+}
+
+.paginationButtons {
+  margin: auto;
+  display: flex;
+  gap: 7px;
+}
+
+.postsPerPage {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
