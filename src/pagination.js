@@ -5,13 +5,22 @@ import { useState } from 'react';
 
 const Pagination = ({ getPrevious, getNext, setPostLimit, postLimit }) => {
   const [currentPage, setCurrentPage] = useState(1);
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
   return (
     <div className='pagination'>
       <PageDropdown postLimit={postLimit} setPostLimit={setPostLimit} />
       <div className='paginationButtons'>
         <IoChevronBackSharp
           onClick={() =>
-            currentPage > 1 && (getPrevious(), setCurrentPage(currentPage - 1))
+            currentPage > 1 &&
+            (scrollToTop(), getPrevious(), setCurrentPage(currentPage - 1))
           }
           size={20}
           className={
@@ -25,6 +34,7 @@ const Pagination = ({ getPrevious, getNext, setPostLimit, postLimit }) => {
           onClick={() => {
             getNext();
             setCurrentPage(currentPage + 1);
+            scrollToTop();
           }}
           size={20}
           className='paginationButton'

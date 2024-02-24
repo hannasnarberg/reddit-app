@@ -1,8 +1,12 @@
 import React from 'react';
 import { timeAgo } from './timeAgo';
 import Markdown from 'markdown-to-jsx';
+import { useEffect } from 'react';
 
-export const FullPost = ({ currentPost }) => {
+const FullPost = ({ currentPost }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <h1>{currentPost.title}</h1>

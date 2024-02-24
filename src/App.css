@@ -41,6 +41,7 @@
 
 .logo {
   width: 15rem;
+  cursor: pointer;
 }
 
 .dot {

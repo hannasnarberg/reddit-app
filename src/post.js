@@ -1,8 +1,16 @@
 import { timeAgo } from './timeAgo';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Post = ({ data, setCurrentPost }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    setCurrentPost(data);
+    navigate('/details');
+  };
+
   return (
-    <div className='card' onClick={() => setCurrentPost(data)}>
+    <div className='card' to='/details' onClick={handleClick}>
       <div>
         <h2>{data.title}</h2>
         <div>
