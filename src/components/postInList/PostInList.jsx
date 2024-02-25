@@ -47,7 +47,7 @@ const PostInList = ({ data, setCurrentPost }) => {
         </div>
       </div>
       {data.thumbnail.startsWith('http') ? (
-        <img src={data.thumbnail} alt='Thumbnail' />
+        <img className='thumbnail' src={data.thumbnail} alt='Thumbnail' />
       ) : (
         ''
       )}

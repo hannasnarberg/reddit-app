@@ -1,10 +1,4 @@
-.feedTitle {
-  font-size: 30px;
-  font-weight: bold;
-  margin: 10px;
-}
-
-.feed {
+.list {
   display: flex;
   flex-direction: column;
   gap: 18px;

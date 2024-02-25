@@ -3,6 +3,7 @@ import PostList from '../postList/PostList';
 import Pagination from '../pagination/Pagination';
 import { useState, useEffect, useCallback } from 'react';
 import fetchPosts from '../../getPosts';
+import './feed.css';
 
 const Feed = ({ currentCategory, setCurrentPost }) => {
   const [posts, setPosts] = useState(null);
@@ -34,9 +35,9 @@ const Feed = ({ currentCategory, setCurrentPost }) => {
   }
 
   return (
-    <>
+    <div>
+      <div className='feedTitle'>{'r/' + currentCategory}</div>
       <PostList
-        category={currentCategory}
         posts={posts.data}
         postLimit={postLimit}
         setCurrentPost={setCurrentPost}
@@ -47,7 +48,7 @@ const Feed = ({ currentCategory, setCurrentPost }) => {
         setPostLimit={setPostLimit}
         postLimit={postLimit}
       />
-    </>
+    </div>
   );
 };
 

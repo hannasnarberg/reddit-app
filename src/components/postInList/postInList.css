@@ -1,7 +1,10 @@
 .postInList {
+  display: flex;
+  gap: 25px;
   padding: 30px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  align-items: center;
 }
 
 .postInList:hover {
@@ -50,4 +53,11 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.thumbnail {
+  margin-left: auto;
+  height: 100px;
+  width: fit-content;
+  max-width: 200px;
 }
