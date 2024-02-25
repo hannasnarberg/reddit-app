@@ -1,5 +1,5 @@
 import React from 'react';
-import PageDropdown from './pageDropdown';
+import PageDropdown from './PageDropdown';
 import { IoChevronBackSharp, IoChevronForwardSharp } from 'react-icons/io5';
 import { useState } from 'react';
 

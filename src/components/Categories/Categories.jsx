@@ -1,12 +1,12 @@
-import { categories } from './categories';
+import { categoriesData } from '../../categoriesData';
 
-export const SideBar = ({ currentCategory, setCategory }) => {
+const Categories = ({ currentCategory, setCategory }) => {
   return (
     <div className='categoriesSection'>
       <h2>Categories</h2>
       <hr></hr>
       <div className='categories'>
-        {categories.sort().map((category) => (
+        {categoriesData.sort().map((category) => (
           <div
             className={
               category === currentCategory ? 'chosen category' : 'category'
@@ -20,3 +20,5 @@ export const SideBar = ({ currentCategory, setCategory }) => {
     </div>
   );
 };
+
+export default Categories;

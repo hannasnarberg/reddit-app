@@ -1,7 +1,8 @@
 import React from 'react';
-import { timeAgo } from './timeAgo';
+import { timeAgo } from '../../utils/timeAgo';
 import Markdown from 'markdown-to-jsx';
 import { useEffect } from 'react';
+import './FullPost.css';
 
 const FullPost = ({ currentPost }) => {
   useEffect(() => {

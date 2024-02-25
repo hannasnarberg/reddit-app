@@ -1,19 +1,12 @@
 import React from 'react';
-import { Post } from './post';
-import { useState } from 'react';
-import Pagination from './pagination';
+import PostInFeed from './PostInFeed';
+import Pagination from '../Pagination/Pagination';
 
-export const Feed = ({
-  posts,
-  postLimit,
-  getPosts,
-  setCurrentPost,
-  setPostLimit,
-}) => {
+const Feed = ({ posts, postLimit, getPosts, setCurrentPost, setPostLimit }) => {
   return (
     <div>
       {posts.children.slice(0, postLimit).map((post) => (
-        <Post setCurrentPost={setCurrentPost} data={post.data} />
+        <PostInFeed setCurrentPost={setCurrentPost} data={post.data} />
       ))}
       <Pagination
         getPrevious={() => getPosts('before', posts.before)}

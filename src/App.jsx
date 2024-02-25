@@ -1,10 +1,10 @@
 import './App.css';
 import fetchPosts from './getPosts';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import logo from './logo.png';
-import Feed from './feed';
-import { SideBar } from './sideBar';
-import FullPost from './fullPost';
+import Feed from './components/Feed/Feed';
+import Categories from './components/Categories/Categories';
+import FullPost from './components/FullPost/FullPost';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 
 const App = () => {
@@ -15,20 +15,27 @@ const App = () => {
 
   const navigate = useNavigate();
 
-  const getPosts = async (page = 'current', id = '') => {
-    try {
-      const postsData = await fetchPosts(currentCategory, postLimit, page, id);
-      setPosts(postsData);
-    } catch (error) {
-      console.error('Error fetching posts:', error);
-    }
-  };
+  const getPosts = useCallback(
+    async (page = 'current', id = '') => {
+      try {
+        const postsData = await fetchPosts(
+          currentCategory,
+          postLimit,
+          page,
+          id
+        );
+        setPosts(postsData);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    },
+    [currentCategory, postLimit]
+  );
 
   useEffect(() => {
     getPosts();
-  }, [currentCategory]);
+  }, [currentCategory, postLimit, getPosts]);
 
-  console.log(currentPost);
   if (!posts) {
     return <div>Loading..</div>;
   }
@@ -45,7 +52,7 @@ const App = () => {
         className='logo'
       />
       <div className='pageContent'>
-        <SideBar
+        <Categories
           currentCategory={currentCategory}
           setCategory={(category) => {
             setCategory(category);
