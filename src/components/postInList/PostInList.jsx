@@ -1,11 +1,11 @@
 import { timeAgo } from '../../utils/timeAgo';
 import { useNavigate } from 'react-router-dom';
-import './postInFeed.css';
+import './postInList.css';
 import { GoComment } from 'react-icons/go';
 import { PiArrowFatUpLight } from 'react-icons/pi';
 import { PiArrowFatDownLight } from 'react-icons/pi';
 
-const PostInFeed = ({ data, setCurrentPost }) => {
+const PostInList = ({ data, setCurrentPost }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -14,7 +14,7 @@ const PostInFeed = ({ data, setCurrentPost }) => {
   };
 
   return (
-    <div className='postInFeed' to='/details' onClick={handleClick}>
+    <div className='postInList' to='/details' onClick={handleClick}>
       <div className='textContent'>
         <h2 className='postTitle'>{data.title}</h2>
         <div>
@@ -55,4 +55,4 @@ const PostInFeed = ({ data, setCurrentPost }) => {
   );
 };
 
-export default PostInFeed;
+export default PostInList;

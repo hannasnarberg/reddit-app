@@ -1,7 +1,6 @@
-import { categoriesData } from '../../categoriesData';
 import './categories.css';
 
-const Categories = ({ currentCategory, setCategory }) => {
+const Categories = ({ categoriesData, currentCategory, setCategory }) => {
   return (
     <div className='categoriesSection'>
       <h2 className='categoriesTitle'>Categories</h2>

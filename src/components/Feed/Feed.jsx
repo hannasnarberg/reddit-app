@@ -1,21 +1,53 @@
 import React from 'react';
-import PostInFeed from './PostInFeed';
-import './feed.css';
+import PostList from '../postList/PostList';
+import Pagination from '../pagination/Pagination';
+import { useState, useEffect, useCallback } from 'react';
+import fetchPosts from '../../getPosts';
 
-const Feed = ({ category, posts, postLimit, setCurrentPost }) => {
+const Feed = ({ currentCategory, setCurrentPost }) => {
+  const [posts, setPosts] = useState(null);
+  const [postLimit, setPostLimit] = useState(10);
+
+  const getPosts = useCallback(
+    async (page = 'current', id = '') => {
+      try {
+        const postsData = await fetchPosts(
+          currentCategory,
+          postLimit,
+          page,
+          id
+        );
+        setPosts(postsData);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    },
+    [currentCategory, postLimit]
+  );
+
+  useEffect(() => {
+    getPosts();
+  }, [currentCategory, postLimit, getPosts]);
+
+  if (!posts) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div>
-      <div className='feedTitle'>{'r/' + category}</div>
-      <div className='feed'>
-        {posts.children.slice(0, postLimit).map((post) => (
-          <PostInFeed
-            key={post.data.id}
-            setCurrentPost={setCurrentPost}
-            data={post.data}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+      <PostList
+        category={currentCategory}
+        posts={posts.data}
+        postLimit={postLimit}
+        setCurrentPost={setCurrentPost}
+      />
+      <Pagination
+        getPrevious={() => getPosts('before', posts.before)}
+        getNext={() => getPosts('after', posts.after)}
+        setPostLimit={setPostLimit}
+        postLimit={postLimit}
+      />
+    </>
   );
 };
 

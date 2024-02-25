@@ -1,5 +1,5 @@
 import React from 'react';
-import PostPerPageSelector from './PostPerPageSelector';
+import PostPerPageSelector from '../postPerPageSelector/PostPerPageSelector';
 import { IoChevronBackSharp, IoChevronForwardSharp } from 'react-icons/io5';
 import './pagination.css';
 import { useState } from 'react';
@@ -20,6 +20,7 @@ const Pagination = ({ getPrevious, getNext, setPostLimit, postLimit }) => {
       <div className='paginationButtons'>
         <IoChevronBackSharp
           className={currentPage === 1 ? 'deactivated' : 'paginationButton'}
+          aria-label='back-button'
           onClick={() =>
             currentPage > 1 &&
             (scrollToTop(), getPrevious(), setCurrentPage(currentPage - 1))
@@ -29,6 +30,7 @@ const Pagination = ({ getPrevious, getNext, setPostLimit, postLimit }) => {
         <span className='pageNr'>{'Page ' + currentPage}</span>
         <IoChevronForwardSharp
           className='paginationButton'
+          aria-label='forward-button'
           onClick={() => {
             getNext();
             setCurrentPage(currentPage + 1);
