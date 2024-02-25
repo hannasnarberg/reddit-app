@@ -1,7 +1,5 @@
 # Reddit 2.0
 
-## Reddit 2.0
-
 ## Installation and Setup Instructions
 
 Clone this repository. You will need `node` and `npm` installed globally on your machine.
