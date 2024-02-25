@@ -1,7 +1,6 @@
 .categoriesSection {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   margin-top: 12px;
-  margin-right: 24px;
   padding: 20px;
   height: fit-content;
 }
@@ -10,21 +9,14 @@
   margin-left: 10px;
 }
 
-.categories {
-  margin-top: 9px;
-}
-
-.category {
+.categoryEntry {
   cursor: pointer;
   padding: 12px;
+  transition: background-color, 0.2s ease;
+  transition: color, 0.2s ease;
 }
 
-.category:hover {
-  font-weight: bold;
-  background-color: rgb(239, 238, 238);
-  color: rgb(255, 51, 0);
-}
-
+.categoryEntry:hover,
 .chosen {
   font-weight: bold;
   background-color: rgb(239, 238, 238);

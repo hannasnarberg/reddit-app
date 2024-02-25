@@ -1,6 +1,6 @@
 import { timeAgo } from '../../utils/timeAgo';
 import { useNavigate } from 'react-router-dom';
-import './Feed.css';
+import './postInFeed.css';
 import { GoComment } from 'react-icons/go';
 import { PiArrowFatUpLight } from 'react-icons/pi';
 import { PiArrowFatDownLight } from 'react-icons/pi';
@@ -22,10 +22,10 @@ const PostInFeed = ({ data, setCurrentPost }) => {
           <span className='dot'> &#183; </span>
           <span>{timeAgo(data.created)}</span>
         </div>
-        <div className='test'>
+        <div className='linkAndStats'>
           <div>
             <a
-              id='linkToPost'
+              className='linkToPost'
               href={'https://www.reddit.com' + data.permalink}
               target='_blank'
               rel='noreferrer'
@@ -33,13 +33,13 @@ const PostInFeed = ({ data, setCurrentPost }) => {
               Open in Reddit
             </a>
           </div>
-          <div className='scoreAndComments'>
-            <div className='score'>
+          <div className='stats'>
+            <div>
               <PiArrowFatUpLight size={20} />
               <span>{data.score}</span>
               <PiArrowFatDownLight size={20} />
             </div>
-            <div className='comments'>
+            <div>
               <GoComment size={20} />
               <span>{data.num_comments}</span>
             </div>

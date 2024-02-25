@@ -2,12 +2,13 @@
   padding: 25px 50px;
 }
 
-.pageContent {
-  display: grid;
-  grid-template-columns: 0.3fr 0.7fr;
+.logo {
+  width: 220px;
+  cursor: pointer;
 }
 
-.logo {
-  width: 15rem;
-  cursor: pointer;
+.pageContent {
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+  gap: 20px;
 }

@@ -1,65 +1,11 @@
 .feedTitle {
-  margin-top: 8px;
-  margin-left: 10px;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
+  margin: 10px;
 }
 
-.postInFeed {
-  margin-top: 1rem;
-  padding: 30px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  gap: 20px;
-}
-
-.postInFeed:hover {
-  background-color: rgb(239, 238, 238);
-}
-
-.textContent {
+.feed {
   display: flex;
   flex-direction: column;
-  gap: 13px;
-}
-
-.postTitle {
-  margin: 0;
-}
-
-.dot {
-  font-weight: bold;
-}
-
-.scoreAndComments {
-  display: flex;
   gap: 18px;
-}
-
-.scoreAndComments * {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.test {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-#linkToPost {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #ff3700;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-#linkToPost:hover {
-  background-color: #ca2c00;
 }
