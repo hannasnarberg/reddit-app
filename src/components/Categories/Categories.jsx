@@ -1,13 +1,14 @@
 import { categoriesData } from '../../categoriesData';
+import './Categories.css';
 
 const Categories = ({ currentCategory, setCategory }) => {
   return (
     <div className='categoriesSection'>
-      <h2>Categories</h2>
-      <hr></hr>
+      <h2 className='categoriesTitle'>Categories</h2>
       <div className='categories'>
         {categoriesData.sort().map((category) => (
           <div
+            key={category}
             className={
               category === currentCategory ? 'chosen category' : 'category'
             }

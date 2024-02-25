@@ -1,3 +1,42 @@
+.container {
+  margin-top: 3px;
+}
+
+.headTitle {
+  padding-bottom: 0px;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+}
+
+pre code {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  font-size: 15px;
+}
+
+.postInfo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.subreddit {
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(255, 51, 0);
+}
+
 .dot {
   font-weight: bold;
+}
+
+h1:not(.headTitle) {
+  font-size: 23px;
 }

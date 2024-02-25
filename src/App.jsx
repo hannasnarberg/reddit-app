@@ -37,7 +37,7 @@ const App = () => {
   }, [currentCategory, postLimit, getPosts]);
 
   if (!posts) {
-    return <div>Loading..</div>;
+    return <div>Loading...</div>;
   }
 
   return (
@@ -74,6 +74,7 @@ const App = () => {
             path='/'
             element={
               <Feed
+                category={currentCategory}
                 posts={posts.data}
                 postLimit={postLimit}
                 getPosts={getPosts}

@@ -13,7 +13,7 @@ export const timeAgo = (timestamp) => {
   if (daysAgo >= 1) {
     timeAgo = daysAgo === 1 ? '1 day ago' : daysAgo + ' days ago';
   } else if (hoursAgo >= 1) {
-    timeAgo = hoursAgo == 1 ? '1 hour ago' : hoursAgo + ' hours ago';
+    timeAgo = hoursAgo === 1 ? '1 hour ago' : hoursAgo + ' hours ago';
   } else if (minutesAgo >= 1) {
     timeAgo = minutesAgo === 1 ? '1 minute ago' : minutesAgo + ' minutes ago';
   } else {

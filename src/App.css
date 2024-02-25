@@ -1,5 +1,5 @@
 .app {
-  padding: 2rem 4rem;
+  padding: 25px 50px;
 }
 
 .pageContent {
@@ -7,73 +7,7 @@
   grid-template-columns: 0.3fr 0.7fr;
 }
 
-.categoriesSection {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  margin-top: 1rem;
-  margin-right: 2rem;
-  padding: 2rem;
-  height: fit-content;
-}
-
-.categories {
-  margin-top: 20px;
-}
-
-.category {
-  margin: 8px;
-  cursor: pointer;
-}
-
-.chosen {
-  font-weight: bold;
-  text-decoration: underline;
-  color: #f8270b;
-}
-
 .logo {
   width: 15rem;
   cursor: pointer;
-}
-
-.pagination {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
-}
-
-.paginationButton:hover {
-  cursor: pointer;
-}
-
-.deactivated {
-  color: rgb(154, 154, 154);
-}
-
-.deactivated:hover {
-  cursor: default;
-}
-
-.dropdown {
-  font-size: 15px;
-  border: 1px solid rgb(177, 177, 177);
-  padding: 2px;
-  border-radius: 3px;
-}
-
-li {
-  margin-top: 7px;
-  list-style-type: none;
-}
-
-.paginationButtons {
-  margin: auto;
-  display: flex;
-  gap: 7px;
-}
-
-.postsPerPage {
-  display: flex;
-  gap: 10px;
-  align-items: center;
 }

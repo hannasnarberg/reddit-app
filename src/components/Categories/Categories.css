@@ -1,0 +1,32 @@
+.categoriesSection {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+  margin-right: 24px;
+  padding: 20px;
+  height: fit-content;
+}
+
+.categoriesTitle {
+  margin-left: 10px;
+}
+
+.categories {
+  margin-top: 9px;
+}
+
+.category {
+  cursor: pointer;
+  padding: 12px;
+}
+
+.category:hover {
+  font-weight: bold;
+  background-color: rgb(239, 238, 238);
+  color: rgb(255, 51, 0);
+}
+
+.chosen {
+  font-weight: bold;
+  background-color: rgb(239, 238, 238);
+  color: rgb(255, 51, 0);
+}
