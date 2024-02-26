@@ -2,9 +2,7 @@ import React from 'react';
 import { timeAgo } from '../../utils/timeAgo';
 import { useNavigate } from 'react-router-dom';
 import './postInList.css';
-import { GoComment } from 'react-icons/go';
-import { PiArrowFatUpLight } from 'react-icons/pi';
-import { PiArrowFatDownLight } from 'react-icons/pi';
+import PostFooter from '../postFooter/PostFooter';
 
 const PostInList = ({ data, setCurrentPost }) => {
   const navigate = useNavigate();
@@ -23,27 +21,7 @@ const PostInList = ({ data, setCurrentPost }) => {
           <span className='dot'> &#183; </span>
           <span>{timeAgo(data.created)}</span>
         </div>
-        <div className='link-and-stats'>
-          <a
-            className='link-to-post'
-            href={'https://www.reddit.com' + data.permalink}
-            target='_blank'
-            rel='noreferrer'
-          >
-            Open in Reddit
-          </a>
-          <div className='stats'>
-            <div>
-              <PiArrowFatUpLight size={20} />
-              <span>{data.score}</span>
-              <PiArrowFatDownLight size={20} />
-            </div>
-            <div>
-              <GoComment size={20} />
-              <span>{data.num_comments}</span>
-            </div>
-          </div>
-        </div>
+        <PostFooter currentPost={data} />
       </div>
       {data.thumbnail && /\.(jpeg|jpg|gif|png)$/.test(data.thumbnail) && (
         <img className='thumbnail' src={data.thumbnail} alt='Thumbnail' />

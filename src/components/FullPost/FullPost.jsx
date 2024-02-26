@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { timeAgo } from '../../utils/timeAgo';
 import ReactMarkdown from 'react-markdown';
 import './fullPost.css';
+import PostFooter from '../postFooter/PostFooter';
 
 const FullPost = ({ currentPost }) => {
   useEffect(() => {
@@ -28,9 +29,13 @@ const FullPost = ({ currentPost }) => {
           </time>
         </div>
       </header>
+      <hr />
       <ReactMarkdown>
         {currentPost.selftext.replace(/&amp;#x200B;/g, '')}
       </ReactMarkdown>
+      <div className='full-post-footer'>
+        <PostFooter currentPost={currentPost} />
+      </div>
     </article>
   );
 };
