@@ -4,27 +4,31 @@ import { useNavigate } from 'react-router-dom';
 import './postInList.css';
 import PostFooter from '../postFooter/PostFooter';
 
-const PostInList = ({ data, setCurrentPost }) => {
+const PostInList = ({ post, setCurrentPost }) => {
   const navigate = useNavigate();
 
   const handleLinkClick = () => {
-    setCurrentPost(data);
+    setCurrentPost(post);
     navigate('/details');
   };
 
   return (
     <div className='post-in-list' to='/details' onClick={handleLinkClick}>
       <div className='text-content'>
-        <h2 className='post-title'>{data.title}</h2>
+        <h2 className='post-title'>{post.title}</h2>
         <div>
-          <span>{data.author}</span>
+          <span>{post.author}</span>
           <span className='dot'> &#183; </span>
-          <span>{timeAgo(data.created)}</span>
+          <span>{timeAgo(post.created)}</span>
         </div>
-        <PostFooter currentPost={data} />
+        <PostFooter
+          score={post.score}
+          numComments={post.num_comments}
+          permalink={post.permalink}
+        />
       </div>
-      {data.thumbnail && /\.(jpeg|jpg|gif|png)$/.test(data.thumbnail) && (
-        <img className='thumbnail' src={data.thumbnail} alt='Thumbnail' />
+      {post.thumbnail && /\.(jpeg|jpg|gif|png)$/.test(post.thumbnail) && (
+        <img className='thumbnail' src={post.thumbnail} alt='Thumbnail' />
       )}
     </div>
   );

@@ -9,7 +9,7 @@ const PostList = ({ posts, postLimit, setCurrentPost }) => {
         <PostInList
           key={post.data.id}
           setCurrentPost={setCurrentPost}
-          data={post.data}
+          post={post.data}
         />
       ))}
     </div>

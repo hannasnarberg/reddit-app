@@ -4,12 +4,12 @@ import { GoComment } from 'react-icons/go';
 import { PiArrowFatUpLight } from 'react-icons/pi';
 import { PiArrowFatDownLight } from 'react-icons/pi';
 
-const PostFooter = ({ currentPost }) => {
+const PostFooter = ({ score, numComments, permalink }) => {
   return (
     <div className='post-footer'>
       <a
         className='link-to-post'
-        href={'https://www.reddit.com' + currentPost.permalink}
+        href={'https://www.reddit.com' + permalink}
         target='_blank'
         rel='noreferrer'
       >
@@ -18,12 +18,12 @@ const PostFooter = ({ currentPost }) => {
       <div className='stats'>
         <div>
           <PiArrowFatUpLight size={20} />
-          <span>{currentPost.score}</span>
+          <span>{score}</span>
           <PiArrowFatDownLight size={20} />
         </div>
         <div>
           <GoComment size={20} />
-          <span>{currentPost.num_comments}</span>
+          <span>{numComments}</span>
         </div>
       </div>
     </div>

@@ -34,7 +34,11 @@ const FullPost = ({ currentPost }) => {
         {currentPost.selftext.replace(/&amp;#x200B;/g, '')}
       </ReactMarkdown>
       <div className='full-post-footer'>
-        <PostFooter currentPost={currentPost} />
+        <PostFooter
+          score={currentPost.score}
+          numComments={currentPost.num_comments}
+          permalink={currentPost.permalink}
+        />
       </div>
     </article>
   );

@@ -5,7 +5,7 @@
   justify-content: center;
 }
 
-.paginationButtons {
+.pagination-buttons {
   display: flex;
   align-items: center;
   margin: auto;
@@ -13,11 +13,11 @@
   justify-content: center;
 }
 
-.pageNr {
+.page-nr {
   font-size: 18px;
 }
 
-.paginationButton:hover {
+.pagination-button:hover {
   cursor: pointer;
 }
 

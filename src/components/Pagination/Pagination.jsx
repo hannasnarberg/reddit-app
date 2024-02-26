@@ -28,24 +28,28 @@ const Pagination = ({ getPrevious, getNext, setPostLimit, postLimit }) => {
   };
 
   return (
-    <nav className='pagination'>
+    <div className='pagination'>
       <PostPerPageSelector postLimit={postLimit} setPostLimit={setPostLimit} />
-      <div className='paginationButtons'>
+      <div className='pagination-buttons'>
         <IoChevronBackSharp
-          className={currentPage === 1 ? 'deactivated' : 'paginationButton'}
+          className={
+            currentPage === 1
+              ? 'deactivated pagination-button'
+              : 'pagination-button'
+          }
           aria-label='back-button'
           onClick={handlePreviousPage}
           size={35}
         />
-        <span className='pageNr'>{'Page ' + currentPage}</span>
+        <span className='page-nr'>{'Page ' + currentPage}</span>
         <IoChevronForwardSharp
-          className='paginationButton'
+          className='pagination-button'
           aria-label='forward-button'
           onClick={handleNextPage}
           size={35}
         />
       </div>
-    </nav>
+    </div>
   );
 };
 
