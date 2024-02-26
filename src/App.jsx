@@ -10,28 +10,31 @@ import Feed from './components/feed/Feed';
 const App = () => {
   const [currentCategory, setCategory] = useState('javascript');
   const [currentPost, setCurrentPost] = useState(null);
-
   const navigate = useNavigate();
+
+  const handleCategoryChange = (category) => {
+    setCategory(category);
+    navigate('/');
+  };
+
+  const handleLogoClick = () => {
+    setCategory('javascript');
+    navigate('/');
+  };
 
   return (
     <div className='app'>
       <img
-        onClick={() => {
-          setCategory('javascript');
-          navigate('/');
-        }}
+        onClick={handleLogoClick}
         src={logo}
         alt='Reddit 2.0'
         className='logo'
       />
-      <div className='pageContent'>
+      <div className='page-content'>
         <Categories
           categoriesData={categoriesData}
           currentCategory={currentCategory}
-          setCategory={(category) => {
-            setCategory(category);
-            navigate('/');
-          }}
+          setCategory={handleCategoryChange}
         />
         <Routes>
           <Route
@@ -43,7 +46,7 @@ const App = () => {
                 <Navigate to='/' />
               )
             }
-          ></Route>
+          />
           <Route
             path='/'
             element={
@@ -52,7 +55,7 @@ const App = () => {
                 setCurrentPost={setCurrentPost}
               />
             }
-          ></Route>
+          />
         </Routes>
       </div>
     </div>

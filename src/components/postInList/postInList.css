@@ -1,4 +1,4 @@
-.postInList {
+.post-in-list {
   display: flex;
   gap: 25px;
   padding: 30px;
@@ -7,17 +7,17 @@
   align-items: center;
 }
 
-.postInList:hover {
+.post-in-list:hover {
   background-color: rgb(239, 238, 238);
 }
 
-.textContent {
+.text-content {
   display: flex;
   flex-direction: column;
   gap: 13px;
 }
 
-.postTitle {
+.post-title {
   margin: 0;
 }
 
@@ -25,12 +25,12 @@
   font-weight: bold;
 }
 
-.linkAndStats {
+.link-and-stats {
   display: flex;
   gap: 20px;
 }
 
-.linkToPost {
+.link-to-post {
   display: inline-block;
   padding: 10px 20px;
   background-color: #ff3700;
@@ -40,7 +40,7 @@
   transition: background-color 0.3s ease;
 }
 
-.linkToPost:hover {
+.link-to-post:hover {
   background-color: #ca2c00;
 }
 

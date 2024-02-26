@@ -1,8 +1,9 @@
-.headTitle {
+.head-title {
   padding-bottom: 0px;
+  font-size: 30px;
 }
 
-.postInfo {
+.post-info {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -18,7 +19,7 @@
   font-weight: bold;
 }
 
-h1:not(.headTitle) {
+h1:not(.head-title) {
   font-size: 23px;
 }
 

@@ -5,6 +5,8 @@ import Pagination from '../Pagination';
 describe('Pagination test', () => {
   let mockGetPrevious, mockGetNext, mockSetPostLimit, mockPostLimit;
 
+  window.scrollTo = jest.fn();
+
   beforeEach(() => {
     mockGetPrevious = jest.fn();
     mockGetNext = jest.fn();
@@ -37,5 +39,23 @@ describe('Pagination test', () => {
     fireEvent.click(screen.getByLabelText('back-button'));
 
     expect(screen.getByText('Page 1')).toBeInTheDocument();
+  });
+
+  test('back button is deactivated at page 1', () => {
+    expect(screen.getByText('Page 1')).toBeInTheDocument();
+    fireEvent.click(screen.getByLabelText('back-button'));
+    expect(screen.getByText('Page 1')).toBeInTheDocument();
+    expect(mockGetPrevious).not.toHaveBeenCalled();
+  });
+
+  test('changing post limit updates component state', () => {
+    const newPostLimit = 15;
+    const postLimitSelector = screen.getByLabelText('Posts per page');
+
+    fireEvent.change(postLimitSelector, {
+      target: { value: newPostLimit.toString() },
+    });
+
+    expect(mockSetPostLimit).toHaveBeenCalledWith(newPostLimit.toString());
   });
 });

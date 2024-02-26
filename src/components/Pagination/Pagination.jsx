@@ -1,45 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PostPerPageSelector from '../postPerPageSelector/PostPerPageSelector';
 import { IoChevronBackSharp, IoChevronForwardSharp } from 'react-icons/io5';
 import './pagination.css';
-import { useState } from 'react';
 
 const Pagination = ({ getPrevious, getNext, setPostLimit, postLimit }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  function scrollToTop() {
+  const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
-  }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+      getPrevious();
+      handleScrollToTop();
+    }
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+    getNext();
+    handleScrollToTop();
+  };
 
   return (
-    <div className='pagination'>
+    <nav className='pagination'>
       <PostPerPageSelector postLimit={postLimit} setPostLimit={setPostLimit} />
       <div className='paginationButtons'>
         <IoChevronBackSharp
           className={currentPage === 1 ? 'deactivated' : 'paginationButton'}
           aria-label='back-button'
-          onClick={() =>
-            currentPage > 1 &&
-            (scrollToTop(), getPrevious(), setCurrentPage(currentPage - 1))
-          }
+          onClick={handlePreviousPage}
           size={35}
         />
         <span className='pageNr'>{'Page ' + currentPage}</span>
         <IoChevronForwardSharp
           className='paginationButton'
           aria-label='forward-button'
-          onClick={() => {
-            getNext();
-            setCurrentPage(currentPage + 1);
-            scrollToTop();
-          }}
+          onClick={handleNextPage}
           size={35}
         />
       </div>
-    </div>
+    </nav>
   );
 };
 

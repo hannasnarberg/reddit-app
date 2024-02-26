@@ -1,17 +1,17 @@
-.postsPerPage {
+.posts-per-page {
   display: flex;
   gap: 10px;
   font-size: 18px;
   align-items: center;
 }
 
-.postsPerPageDropdown {
+.posts-per-page-dropdown {
   font-size: 18px;
   border: 1px solid rgba(0, 0, 0, 0.166);
   padding: 2px;
   border-radius: 3px;
 }
 
-.postsPerPageDropdown:hover {
+.posts-per-page-dropdown:hover {
   cursor: pointer;
 }

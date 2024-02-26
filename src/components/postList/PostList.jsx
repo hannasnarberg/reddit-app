@@ -4,7 +4,7 @@ import './postList.css';
 
 const PostList = ({ posts, postLimit, setCurrentPost }) => {
   return (
-    <div className='list'>
+    <div className='post-list'>
       {posts.children.slice(0, postLimit).map((post) => (
         <PostInList
           key={post.data.id}

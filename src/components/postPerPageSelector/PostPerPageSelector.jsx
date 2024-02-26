@@ -4,17 +4,19 @@ import './postPerPageSelector.css';
 const PostPerPageSelector = ({ postLimit, setPostLimit }) => {
   const postLimitOptions = [5, 10, 15];
   return (
-    <div className='postsPerPage'>
-      <label htmlFor='postLimitSelect'>Posts per page</label>
+    <div className='posts-per-page'>
+      <label htmlFor='post-limit-select'>Posts per page</label>
       <select
-        id='postLimitSelect'
+        id='post-limit-select'
         value={postLimit}
-        className='postsPerPageDropdown'
+        className='posts-per-page-dropdown'
         onChange={(e) => setPostLimit(e.target.value)}
-        data-testid='postLimitSelect'
+        aria-label='Select posts per page'
       >
         {postLimitOptions.map((option) => (
-          <option key={option}>{option}</option>
+          <option key={option} value={option}>
+            {option}
+          </option>
         ))}
       </select>
     </div>
